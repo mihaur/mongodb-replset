@@ -5,7 +5,7 @@ services:
     container_name: mongo1
     image: mongo:4.2.5
     volumes:
-      - /mongodb/rs01/data01/db:/data/db
+      - data1:/data/db
     networks:
       - mongo-net
     expose:
@@ -19,7 +19,7 @@ services:
     container_name: mongo2
     image: mongo:4.2.5
     volumes:
-      - /mongodb/rs01/data02/db:/data/db
+      - data2:/data/db
     networks:
       - mongo-net
     expose:
@@ -33,7 +33,7 @@ services:
     container_name: mongo3
     image: mongo:4.2.5
     volumes:
-      - /mongodb/rs01/data03/db:/data/db
+      - data3:/data/db
     networks:
       - mongo-net
     expose:
@@ -45,3 +45,8 @@ services:
 
 networks:
   mongo-net:
+
+volumes:
+  data1:
+  data2:
+  data3:
